@@ -1,0 +1,230 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf340
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;\f1\fnil\fcharset0 Consolas;}
+{\colortbl;\red255\green255\blue255;\red38\green38\blue38;\red50\green98\blue178;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid1\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\margl1440\margr1440\vieww19180\viewh14800\viewkind0
+\deftab720
+\pard\pardeftab720\sl640\sa320\partightenfactor0
+
+\f0\b\fs54 \cf2 \expnd0\expndtw0\kerning0
+Set up the Learning VM\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl512\sa320\partightenfactor0
+\ls1\ilvl0
+\b0\fs32 \cf2 \kerning1\expnd0\expndtw0 {\listtext	1.	}\expnd0\expndtw0\kerning0
+Before beginning, you may want to use the MD5 sum provided at the VM download page to verify your download. On Mac OS X and *nix systems, you can use the command 
+\f1\fs28 md5 learning_puppet_vm.zip
+\f0\fs32  and compare the output to the text contents of the 
+\f1\fs28 learning_puppet_vm.zip.md5
+\f0\fs32  file provided on the download page. On Windows systems, you will need to download and use a tool such as the {\field{\*\fldinst{HYPERLINK "https://www.microsoft.com/en-us/download/details.aspx?id=11533"}}{\fldrslt \cf3 Microsoft File Checksum Integrity Verifier}}.\uc0\u8232 \
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	2.	}\expnd0\expndtw0\kerning0
+Get an up-to-date version of your virtualization software. We suggest using either VirtualBox or a VMware application appropriate for your platform. {\field{\*\fldinst{HYPERLINK "https://www.virtualbox.org/wiki/Downloads"}}{\fldrslt \cf3 VirtualBox}} is free and available for Linux, OS X, and Windows. VMware has several desktop virtualization applications, including {\field{\*\fldinst{HYPERLINK "https://www.vmware.com/products/fusion/"}}{\fldrslt \cf3 VMWare Fusion}} for Mac and {\field{\*\fldinst{HYPERLINK "https://www.vmware.com/products/workstation/"}}{\fldrslt \cf3 VMware Workstation}} for Windows.\uc0\u8232 \
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	3.	}\expnd0\expndtw0\kerning0
+The Learning VM's Open Virtualization Archive format must be 
+\i imported
+\i0  rather than opened directly. Launch your virtualization software and find an option for 
+\i Import
+\i0  or 
+\i Import Appliance
+\i0 . (This will usually be in a 
+\i File
+\i0  menu. If you cannot locate an 
+\i Import
+\i0  option, please refer to your virtualization software's documentation.)\uc0\u8232 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl512\sa320\partightenfactor0
+\ls1\ilvl0
+\i \cf2 \kerning1\expnd0\expndtw0 {\listtext	4.	}\expnd0\expndtw0\kerning0
+Before
+\i0  starting the VM for the first time, you will need to adjust its settings. We recommend allocating 4GB of memory for the best performance. If you don't have enough memory on your host machine, you may leave the allocation at 3GB or lower it to 2GB, though you may encounter stability and performance issues. Set the 
+\i Network Adapter
+\i0  to 
+\i Bridged
+\i0 . Use an 
+\i Autodetect
+\i0  setting if available, or accept the default Network Adapter name. (If you started the VM before making these changes, you may need to restart the VM before the settings will be applied correctly.) If you are unable to use a bridged network, we suggest using the port-forwarding instructions provided in the troubleshooting guide.\uc0\u8232 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl512\sa320\partightenfactor0
+\ls1\ilvl0\cf2 \kerning1\expnd0\expndtw0 {\listtext	5.	}\expnd0\expndtw0\kerning0
+Start the VM. When it is started, make a note of the IP address and password displayed on the splash page. Rather than logging in directly, we highly recommend using SSH. On OS X, you can use the default Terminal application or a third-party application like iTerm. For Windows, we suggest the free SSH client {\field{\*\fldinst{HYPERLINK "http://www.putty.org/"}}{\fldrslt \cf3 PuTTY}}. Connect to the Learning VM with the login 
+\f1\fs28 root
+\f0\fs32  and password you noted from the splash page. (e.g. 
+\f1\fs28 ssh root@<IPADDRESS>
+\f0\fs32 ) Be aware that it might take several minutes for the services in the PE stack to fully start after the VM boots. Once you're connected to the VM, we suggest updating the clock with 
+\f1\fs28 ntpdate pool.ntp.org
+\f0\fs32 .nt\uc0\u8232 \
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	6.	}\expnd0\expndtw0\kerning0
+You can access this Quest Guide via a webserver running on the Learning VM itself. Open a web broswer on your host and enter the Learning VM's IP address in the address bar. (Be sure to use 
+\f1\fs28 http://<ADDRESS>
+\f0\fs32  for the Quest Guide, as
+\f1\fs28 https://<ADDRESS>
+\f0\fs32  will take you to the PE console.)\uc0\u8232 \
+\pard\pardeftab720\sl640\sa320\partightenfactor0
+
+\b\fs54 \cf2 Learning VM Troubleshooting\
+\pard\pardeftab720\sl512\sa320\partightenfactor0
+
+\b0\fs32 \cf2 For the most up-to-date version of this troubleshooting information, {\field{\*\fldinst{HYPERLINK "https://github.com/puppetlabs/puppet-quest-guide/blob/master/troubleshooting.md"}}{\fldrslt \cf3 check the GitHub repository}}.\
+\pard\pardeftab720\sl500\sa320\partightenfactor0
+
+\b\fs36 \cf2 The cowsay package won't install\
+\pard\pardeftab720\sl512\sa320\partightenfactor0
+
+\b0\fs32 \cf2 The Learning VM version 2.29 has an error in the instructions for this quest. The cowsay package declaration should include
+\f1\fs28 provider => 'gem'
+\f0\fs32 , rather than 
+\f1\fs28 ensure => 'gem'
+\f0\fs32 .\
+If you continue to get puppet run failures related to the gem, you can install the cached version manually: 
+\f1\fs28 gem install /var/cache/rubygems/gems/cowsay-0.2.0.gem
+\f0\fs32 \
+\pard\pardeftab720\sl500\sa320\partightenfactor0
+
+\b\fs36 \cf2 I completed a task, but the quest tool doesn't show it as complete\
+\pard\pardeftab720\sl512\sa320\partightenfactor0
+
+\b0\fs32 \cf2 The quest tool uses a series of {\field{\*\fldinst{HYPERLINK "http://serverspec.org/"}}{\fldrslt \cf3 Serverspec}} tests for each quest to track task progress. Certain tasks simply check your bash history for an entered command, so it's possible that you entered a valid alternate version of the command that simply wasn't recognized by the check.\
+It is also possible that we have written the test for a task in a way that is too restrictive and doesn't correctly capture a valid syntactical variation in your Puppet code or another relevant file. You can check the specific matchers by looking at a quest's spec file in the 
+\f1\fs28 /usr/src/puppet-quest-guide/tests
+\f0\fs32  directory. If you find an issue here, please let us know by sending an email to {\field{\*\fldinst{HYPERLINK "mailto:learningvm@puppetlabs.com"}}{\fldrslt \cf3 learningvm@puppetlabs.com}}.\
+If you're willing to do a little archaeology, you can find the tests we use to validate that quests can be completed in the
+\f1\fs28 /usr/src/puppet-quest-guide/tests/test_tests
+\f0\fs32  directory. These aren't written for legibility and use alternate methods such as 
+\f1\fs28 sed
+\f0\fs32  and the PE API to complete tasks, but they might offer some inspiration if you're stuck on a task. (Note that the test script for the Application Orchestrator quest is currently incomplete.)\
+\pard\pardeftab720\sl500\sa320\partightenfactor0
+
+\b\fs36 \cf2 Password Required for the Quest Guide\
+\pard\pardeftab720\sl512\sa320\partightenfactor0
+
+\b0\fs32 \cf2 The Learning VM's Quest Guide is accessible at 
+\f1\fs28 http://<VM's IP Address>
+\f0\fs32 . Note that this is 
+\f1\fs28 http
+\f0\fs32  and not 
+\f1\fs28 https
+\f0\fs32  which is reserved for the PE console. The PE console will prompt you for a password, while no password is required for the Quest Guide. (The Quest Guide includes a password for the PE console in the Power of Puppet quest: 
+\b admin/puppetlabs
+\b0 )\
+\pard\pardeftab720\sl500\sa320\partightenfactor0
+
+\b\fs36 \cf2 I can't find the VM password\
+\pard\pardeftab720\sl512\sa320\partightenfactor0
+
+\b0\fs32 \cf2 The password to log in to the VM is generated randomly and will be displayed on the splash page displayed on the terminal of your virtualization software when you start the VM.\
+If you are already logged in via your virtualization software's terminal, you can use the following command to view the password: 
+\f1\fs28 cat /var/local/password
+\f0\fs32 .\
+If the password is not displayed on the splash page on startup, it is possible that some error occured during the startup process. Restarting the VM should regenerate this page with a valid password.\
+\pard\pardeftab720\sl500\sa320\partightenfactor0
+
+\b\fs36 \cf2 Does the Learning VM work on vSphere, ESXi, etc.?\
+\pard\pardeftab720\sl512\sa320\partightenfactor0
+
+\b0\fs32 \cf2 Possibly, but we don't currently have the resources to test or support the Learning VM on these platforms.\
+\pard\pardeftab720\sl500\sa320\partightenfactor0
+
+\b\fs36 \cf2 I cannot connect to the PE console\
+\pard\pardeftab720\sl512\sa320\partightenfactor0
+
+\b0\fs32 \cf2 It may take some time after the VM is started before all the Puppet services are fully started. If you recently started or restarted the VM, or restarted any services in the PE stack, please wait a few minutes before you try to access the PE console.\
+Because the Learning VM's puppet services are configured to run in an environment with restricted resources, they are more prone to crashes than a production PE installation.\
+You can check the status of puppet services with the following command:\
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f1\fs28 \cf2 systemctl --all | grep pe-\
+\pard\pardeftab720\sl512\sa320\partightenfactor0
+
+\f0\fs32 \cf2 If you notice any stopped puppet-related services (e.g. pe-console-services), double check that you have sufficient memory allocated to the VM and available on your host, then use the following script to restart these services in the correct order:\
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f1\fs28 \cf2 restart_pe_services.sh\
+\pard\pardeftab720\sl500\sa320\partightenfactor0
+
+\f0\b\fs36 \cf2 My Puppet run fails!\
+\pard\pardeftab720\sl512\sa320\partightenfactor0
+
+\b0\fs32 \cf2 There are several common reasons for a Puppet run to fail.\
+If a syntax error is indicated, please correct the specified file. Note that due to the way syntax is parsed, an error may not always be on the line indicated. If you can't locate an error on the line indicated in the error message, check preceeding lines for missing commas or unmatched delimiters such as parentheses, brackets, or quotation marks.\
+If you get an error along the lines of 
+\f1\fs28 Error 400 on SERVER: Unknown function union...
+\f0\fs32  it is likely because the 
+\f1\fs28 puppetlabs-stdlib
+\f0\fs32  module has not been installed. This module is a dependency for many modules, and provides a set of common functions. If you are running the Learning VM offline, you cannot rely on the Puppet Forge's dependency resolution. We have this module and all other modules required for the Learning VM cached, with instructions to install them in the Power of Puppet quest. If that installation fails, you may try adding the 
+\f1\fs28 --force
+\f0\fs32  flag after the 
+\f1\fs28 --ignore-dependencies
+\f0\fs32  flag.\
+If you see an issue including 
+\f1\fs28 connect(2) for "learning.puppetlabs.vm" port 8140
+\f0\fs32  this generally indicates that the 
+\f1\fs28 pe-puppetserver
+\f0\fs32  service is down. See the section above for instructions on checking and restarting PE services.\
+Similarly, an error including 
+\f1\fs28 Failed to find facts from PuppetDB at learning.puppetlabs.vm:8140
+\f0\fs32  generally indicates that the 
+\f1\fs28 pe-puppetdb
+\f0\fs32  service is down. Again, refer to the section above for instructions on checking and restarting PE services.\
+\pard\pardeftab720\sl500\sa320\partightenfactor0
+
+\b\fs36 \cf2 I can't import the OVA\
+\pard\pardeftab720\sl512\sa320\partightenfactor0
+
+\b0\fs32 \cf2 Ensure that you have an up-to-date version of your virtualization software installed. Note that the "check for updates" feature of VirtualBox may not always work as expected, so check the website for the most recent version. If you are sure that your virtualization software is up to date and your host system is 64 bit and has virtualization extensions enabled in the BIOS, please let us know if you still cannot import the OVA.\
+\pard\pardeftab720\sl500\sa320\partightenfactor0
+
+\b\fs36 \cf2 The Learning VM has no IP address or the IP address will not respond.\
+\pard\pardeftab720\sl512\sa320\partightenfactor0
+
+\b0\fs32 \cf2 If your network connection has changed since you loaded the VM, it's possible that your IP address is different from that displayed on the Learning VM splash screen. Log in to the VM via the virtualization directly (rather than SSH) and use the
+\f1\fs28 facter ipaddress
+\f0\fs32  command the check the current address. If you continue to get an no IP address or an invalid IP address, restarting the VM is generally the quickest way to ensure that the network services are correctly reset. (Unfortunately restarting the network service directly isn't always reliable.)\
+Some network configurations may still prevent you from accessing the Learning VM. If this is the case, we recommend that you speak to your site network administrator to see if there are any firewall rules, proxies, or DHCP server setting that might be preventing you from accessing the VM.\
+If networking continues to cause trouble, you can connect to the Learning VM via port forwarding. Change your VM's network adapter to NAT, and configure port forwarding as follows:\
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f1\fs28 \cf2 Name   -   Protocol - HostIP -   HostPort - GuestIP - GuestPort\
+SSH        TCP        127.0.0.1  2222                 22\
+HTTP       TCP        127.0.0.1  8080                 80\
+HTTPS      TCP        127.0.0.1  8443                 443\
+GRAPHITE   TCP        127.0.0.1  8090                 90\
+\pard\pardeftab720\sl512\sa320\partightenfactor0
+
+\f0\fs32 \cf2 Once you have set up port forwarding, you can use those ports to access the VM via ssh (
+\f1\fs28 ssh -p 2222 root@localhost
+\f0\fs32 ) and access the Quest Guide and PE console by entering 
+\f1\fs28 http://localhost:8080
+\f0\fs32  and 
+\f1\fs28 https://localhost:8443
+\f0\fs32  in your browser address bar.\
+\pard\pardeftab720\sl500\sa320\partightenfactor0
+
+\b\fs36 \cf2 I can't scroll up in my terminal\
+\pard\pardeftab720\sl512\sa320\partightenfactor0
+
+\b0\fs32 \cf2 The Learning VM uses a tool called tmux to allow us to display the quest status. You can scroll in tmux by first hitting control-b, then [ (left bracket). You will then be able to use the arrow keys to scroll. Press q to exit scrolling.\
+\pard\pardeftab720\sl500\sa320\partightenfactor0
+
+\b\fs36 \cf2 Running the VM in VirtualBox, I encounter a series of "Rejecting I/O input from offline devices"\
+\pard\pardeftab720\sl512\sa320\partightenfactor0
+
+\b0\fs32 \cf2 You may try reducing the VM's processors to 1 and disabling the "I/O APIC" option in the system section of the settings menu. Be aware, however, that this might result in 
+\i very
+\i0  slow start times for services in the PE stack.\
+\pard\pardeftab720\sl500\sa320\partightenfactor0
+
+\b\fs36 \cf2 Still need help?\
+\pard\pardeftab720\sl512\sa320\partightenfactor0
+
+\b0\fs32 \cf2 If your puppet runs still fail after trying the steps above, check the Puppet Enterprise {\field{\*\fldinst{HYPERLINK "https://docs.puppetlabs.com/pe/latest/release_notes_known_issues.html"}}{\fldrslt \cf3 Known Issues}} page or feel free to contact us at {\field{\*\fldinst{HYPERLINK "mailto:learningvm@puppetlabs.com"}}{\fldrslt \cf3 learningvm@puppetlabs.com}}. Please include details of your host OS, virtualization software and version, and any details of the site network configuration where you're running the VM (for example, whether there is a proxy or restrictive firewall rules). If there are logs relevant to the issue, you can use scp from your host machine to copy them to a local directory:\
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f1\fs28 \cf2 scp root@<IPADDRESS>:/var/log/messages messages\
+\pard\pardeftab720\sl512\sa320\partightenfactor0
+
+\f0\fs32 \cf2 On a Windows system wtih {\field{\*\fldinst{HYPERLINK "http://tartarus.org/~simon/putty-snapshots/htmldoc/Chapter5.html#pscp"}}{\fldrslt \cf3 PuTTY PSCP installed}}, you can use 
+\f1\fs28 pscp
+\f0\fs32  from a command prompt:\
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f1\fs28 \cf2 pscp root@<IPADDRESS>:/var/log/messages messages
+\f0\fs32 \cf2 \
+}
